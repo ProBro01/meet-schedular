@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'sans-serif', sans-serif;
+  }
+
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100));
+
+  }
+
+  .container {
+    max-width: 700px;
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .container .title {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+  }
+
+  .container .title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    border-radius: 5px;
+    background: linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100));
+
+  }
+
+  .content form .user-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+  }
+
+  form .user-details .input-box {
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+  }
+
+  form .input-box span.details {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+
+  .user-details .input-box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .user-details .input-box input:focus,
+  .user-details .input-box input:valid {
+    border-color: #9b59b6;
+  }
+
+  form .gender-details .gender-title {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  form .category {
+    display: flex;
+    width: 80%;
+    margin: 14px 0;
+    justify-content: space-between;
+  }
+
+  form .category label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  form .category label .dot {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background: #d9d9d9;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  #dot-1:checked~.category label .one,
+  #dot-2:checked~.category label .two,
+  #dot-3:checked~.category label .three {
+    background: #9b59b6;
+    border-color: #d9d9d9;
+  }
+
+  form input[type="radio"] {
+    display: none;
+  }
+
+  #btn {
+    height: 55px;
+    margin: 35px 0
+  }
+
+  #btn {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100));
+
+  }
+
+  form #btn input:hover {
+    /* transform: scale(0.99); */
+    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  }
+
+  @media(max-width: 584px) {
+    .container {
+      max-width: 100%;
+    }
+
+    form .user-details .input-box {
+      margin-bottom: 15px;
+      width: 100%;
+    }
+
+    form .category {
+      width: 100%;
+    }
+
+    .content form .user-details {
+      max-height: 300px;
+      overflow-y: scroll;
+    }
+
+    .user-details::-webkit-scrollbar {
+      width: 5px;
+    }
+  }
+
+  @media(max-width: 459px) {
+    .container .content .category {
+      flex-direction: column;
+    }
+  }
+
+  #btn1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  }
+
+  .pop {
+    border-radius: 5px;
+    border: none;
+    left: 44%;
+    background-color: #fafafa;
+    width: 300px;
+    height: 232px;
+    position: absolute;
+    top: 40%;
+    visibility: hidden;
+    left: 50;
+    transform: translate(-50px, -50px) scale(0.1);
+    transition: transform 0.1s, center 0.1s;
+  }
+
+  .enter {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  p {
+    font-size: 15px;
+    font-family: 'Public Sans', sans-serif;
+    background-color: #37c751;
+    padding: 8px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+
+  #inp {
+    position: absolute;
+    top: 53%;
+    left: 22%;
+    border: 2px solid black;
+    border-radius: 3px;
+
+  }
+
+  .p {
+    position: absolute;
+    top: 44%;
+    left: 18%;
+    font-size: small;
+    font-family: 'Public Sans', sans-serif;
+    color: rgb(10, 60, 129);
+
+  }
+
+  .open-pop {
+    visibility: visible;
+    top: 40%;
+    transform: translate(-50px, -50px) scale(1);
+  }
+
+  .timer {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    font-size: 1px;
+    font-family: 'Public Sans', sans-serif;
+    color: rgb(10, 60, 129);
+  }
+
+
+  #close {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 15px;
+    font-family: 'Public Sans', sans-serif;
+    background-color: #37c751;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+
+      <form data-toggle="modal" id="myForm">
+        <div class="user-details">
+
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text"  id="name" placeholder="Enter your name" required name="name" minlength="4" tabindex="1">
+          </div>
+
+
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email"  id="email" placeholder="Enter your email" required name="email">
+          </div>
+
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" id="number" placeholder="Enter your 10 digit number" required name="number" pattern="[0-9]{10}">
+          </div>
+
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="text" id="password" name="password" placeholder="Enter your Password" required>
+            <div class="indicator" style="display: inline-block;color: red;position: relative;left: 5px;"></div>
+
+            <div class="indicator2"
+              style="display: inline-block;color: red;position: relative;left: 5px; margin: 10px 0px 0px 0px;"></div>
+          </div>
+
+
+        </div>
+
+
+
+
+        <div data-bs-toggle="modal" data-bs-target="#loginModal">
+          <button id="btn" onclick="submitRegistration(event)" type="button">
+            SUBMIT
+          </button>
+        </div>
+        <div class="mx-2" data-bs-toggle="modal" data-bs-target="#myModal">
+
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <script>
+     function submitRegistration(event) {
+      var username = document.getElementById('name').value
+      var email = document.getElementById('email').value
+      var contact = document.getElementById('number').value
+      var password = document.getElementById('password').value
+      
+      fetch("http://127.0.0.1:8000/auth/signin", {
+        method: "POST",
+        headers: {
+          'Content-type': "application/json",
+        },
+        body: JSON.stringify({
+          username:username,
+          password:password,
+          email:email,
+          contact:contact
+        })
+      }).then((response) => {
+        return response.json()
+      }).then((data) => {
+        console.log(data)
+        return data
+      })
+    }
+  </script>
+
+
+  <!--modal-->
+
+  <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mymodalModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+
+      <div class="modal-content" style="justify-content: center; align-items: center; height: 180px;">
+        <div class="modal-header">
+          <h6 class="modal-title" id="exampleModalLabel"
+            style="display: inline-block;position: relative;font-size: 20px;">ENTER YOUR OTP:</h6>
+          <div class="timer">
+            <h1 id="time" style="display: inline-block;font-size: 15px;">10</h1>
+          </div>
+
+        </div>
+
+        <input type="text" name="" id="inp1" style="
+        display: inline;
+        position: relative;
+        
+    ">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="margin:10px;">Close</button>
+
+      </div>
+    </div>
+  </div> -->
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+
+  let pattern = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})'); //Using the metrics above, we are going to create a strong level password that has at least one lowercase letter (?=.*[a-z]), one uppercase letter (?=.*[A-Z]), one digit (?=.*[0-9]), one special character (?=.*[^A-Za-z0-9]), and is at least eight characters long(?=.{8,}).
+  let inputToListen = document.getElementById('pass-one'); // Get Input where psw is write
+  let valide = document.getElementsByClassName('indicator')[0]; //little indicator of validity of psw
+  let valdie2 = document.getElementsByClassName('indicator2')[0];
+  inputToListen.addEventListener('input', function () { // Add event listener on input
+    if (pattern.test(inputToListen.value)) {
+      valide.innerHTML = 'strong';
+      valide.style.color = 'green';
+      valdie2.innerHTML = "";
+    } else {
+      valide.innerHTML = 'weak';
+      valide.style.color = 'red';
+      valdie2.innerHTML = 'Atleast one lower-case,Upper-case,One special_character,One digit required.';
+      valdie2.style.color = 'red';
+    }
+  });
+
+  $('#myForm').on('submit', function (e) {
+
+    e.preventDefault(); //stop submit
+
+    if ($('#myCheck').is(':checked')) {
+      //Check if checkbox is checked then show modal
+      $('#myModal').modal('show');
+      return "";
+    }
+  });
+
+</script>
+
+</html>

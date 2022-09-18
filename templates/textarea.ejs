@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- {
+    "_id": "6325edd52eea6ae90050deb7",
+    "meet_title": "Fresher",
+    "start_date": "2022-09-21T00:00:00.000Z",
+    "end_date": "2022-09-22T00:00:00.000Z",
+    "start_time": "12:00pm",
+    "end_time": "12:00pm",
+    "creater_id": "6325ecb8731d6fd31e3218a5",
+    "meet_participent": [],
+    "meet_id": "az13vchdjfkd",
+    "meet_link": "http://meet.google.com/wvukj-opfhd",
+    "meet_description": "Meet is organized for the meet of Freshers",
+    "meet_topic": "fresher_meet",
+    "__v": 0
+} -->
+
+
+<body>
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <style>
+        body {
+            background: linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100));
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 180px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            padding: 12px 16px;
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        button {
+            color: black;
+            border-radius: none;
+            cursor: pointer;
+            padding: 10px 10px;
+            border-radius: 8px;
+            position: relative;
+            top: 50px;
+            border-color: none;
+            font-family: sans-serif;
+
+        }
+
+        .pics {
+            padding: 100px 40px;
+        }
+
+        .maintext {
+            display: flex;
+            flex-direction: row;
+            
+        }
+
+        .input-box {
+            padding: 10px 10px;
+            display: block;
+            
+        }
+
+        .detailes {
+            display: block;
+            border: none;
+            
+        }
+        .field {
+    position: relative;
+    left: 177px;
+    top: 15px;
+    background: white;
+    border-radius: 5px;
+    padding: 8px;
+}
+.input-box{
+    color: black;
+    border: none;
+    font-weight: sem-bold;
+    font-family: sans-serif;
+
+}
+input[type="text"]{
+    border: none;
+    padding: 5px 10px;
+    font-weight: 300;
+    border-radius: 10px;
+}
+
+
+    </style>
+
+    <body>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+                <!-- Toggle button -->
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                    data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Collapsible wrapper -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Navbar brand -->
+                    <a class="navbar-brand mt-2 mt-lg-0" href="#">
+                        <img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" height="15"
+                            alt="MDB Logo" loading="lazy" />
+                    </a>
+                    <!-- Left links -->
+                    <div class="nav1" style="width: 100%; display: flex; justify-content: center; align-items: center;">
+ 
+                        <ul class="navbar-nav">
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" style="font-family: sans-serif;">
+                                    <div class="dropdown">
+                                        <span style="position: relative; left: 40px;">Meet Schedule</span>
+                                        <div class="dropdown-content">
+                                            <p>Pending Meet</p>
+                                            <p>Scheduled Meet</p>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Left links -->
+                </div>
+                <!-- Collapsible wrapper -->
+
+                <!-- Right elements -->
+                <div class="d-flex align-items-center">
+                    <!-- Icon -->
+                    <a class="text-reset me-3" href="#">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+
+                    <!-- Notifications -->
+                    <div class="dropdown">
+                        <div class="name" style="position: relative; right : 20px;"><%= emailaddress %></div>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                        </ul>
+                    </div>
+                    <!-- Avatar -->
+                    <div class="dropdown">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25"
+                            alt="Black and White Portrait of a Man" loading="lazy" />
+
+                    </div>
+                </div>
+                <!-- Right elements -->
+            </div>
+            <!-- Container wrapper -->
+        </nav>
+        <!-- Navbar -->
+
+        <!-- body main-->
+        <div class="maintext">
+
+            <div class="pics">
+                <img src="/images/pic2.png" alt="">
+            </div>
+      
+            <div class="field">
+                <div class="input-box">
+                    <span class="details" id="name" >Meet title</span>
+                    <input type="text" value="<%= meet_title %>"  required name="name" value="meet " minlength="4" tabindex="1"  style="width: 60vh ; border : none;" disabled >
+                </div>
+                
+                <div class="input-box">
+                    <span class="details" id="name">Meet description</span>
+                    <input type="text"  value="<%= meet_description %>"   required name="name" minlength="4" tabindex="1"  style="width: 60vh"disabled >
+                </div>
+
+                <div class="input-box">
+                    <span class="details" id="email">Start date</span>
+                    <input type="email"  value="<%= start_date %>"   required name="email"  style="width: 60vh; border : none;"  disabled>
+                </div>
+ 
+                
+                <div class="input-box">
+                    <span class="details" id="password">Start time</span>
+                    <div class="indicator" style="display: inline-block;color: red;position: relative;left: 5px;"></div>
+                    <input type="text"  value="<%= start_time %>"   name="password" id="pass-one" required style="width: 60vh" disabled>
+                </div>
+                <div class="input-box">
+                    <span class="details" id="number">End Time</span>
+                    <input type="text"  value="<%= end_time %>"    required name="number" pattern="[0-9]{10}"  style="width: 60vh" disabled >
+                </div>
+                <input type="text"  required name="number" pattern="[0-9]{10}" style="width: 60vh" disabled>
+                <button><a href="<%= meet_link %>">Join meet</a></button>
+            </div>
+
+        </div>
+</body>
+
+</html>

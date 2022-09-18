@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </head>
+  <style>
+    .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.meets-heading{
+  
+  font-size: 25px;
+  font-family:'Times New Roman', Times, serif;
+  padding: 20px;
+
+}
+.meet-types{
+  display: flex;
+}
+.meet-type-sub{
+  display: flex;
+  flex-direction: column;
+}
+.maindev{
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; */
+}
+  </style>
+  <script>
+
+      var MeetingsList;
+  </script>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+          <!-- Toggle button -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+      
+          <!-- Collapsible wrapper -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Navbar brand -->
+            <a class="navbar-brand mt-2 mt-lg-0" href="#">
+              <img
+                src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
+                height="15"
+                alt="MDB Logo"
+                loading="lazy"
+              />
+            </a>
+            <!-- Left links -->
+            <div class="nav1" style="width: 100%; display: flex; justify-content: center; align-items: center;">
+    
+                <ul class="navbar-nav">
+                  
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style= "font-family: sans-serif;"><div class="dropdown">
+                          <span style="position: relative; left: 80px;">Let's Meet</span>
+                    </div></a>
+                    </li>
+                </ul>
+            
+            </div>
+            <!-- Left links -->
+          </div>
+          <!-- Collapsible wrapper -->
+      
+          <!-- Right elements -->
+          <div class="d-flex align-items-center">
+            <!-- Icon -->
+            <a class="text-reset me-3" href="#">
+              <i class="fas fa-shopping-cart"></i>
+            </a>
+      
+            <!-- Notifications -->
+            <div class="dropdown">
+              <div class="name" style="position: relative; right : 20px;"><%= emailaddress %></div>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+              </ul>
+            </div>
+            <!-- Avatar -->
+            <div class="dropdown">
+                <img
+                  src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+                  class="rounded-circle"
+                  height="25"
+                  alt="Black and White Portrait of a Man"
+                  loading="lazy"
+                />
+              
+            </div>
+          </div>
+          <!-- Right elements -->
+        </div>
+        <!-- Container wrapper -->
+      </nav>
+    
+    <!--main body-->
+    < class="maindev">
+        <a href="/detail">
+
+            <button type="button" class="btn btn-outline-primary">Create MEET</button>
+        </a>
+      
+          <div class="meet-types">
+              <div class="meet-type-sub">
+                <div class="meets-heading" >Scheduled Meets</div>
+                <div>
+                  <div>Date: </div>
+                  <div> Time :</div>
+                  <div>summary :</div>
+                  <div>link :</div>
+                  <div>location :</div>
+                  <div>descrition :</div>
+                  <div>Members :</div>
+        
+                </div>
+              </div>
+              
+              <div class="meets-heading" >Attended Meets</div>
+              <div class="meets-heading" >Canceled Meets</div>
+          </div>
+          
+        
+        
+        
+
+
+
+    </div>
+
+
+</body>
+</html>
