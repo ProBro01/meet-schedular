@@ -17,7 +17,7 @@ export function logincontroller(req, res, next) {
                 }
                 const token = jwt.sign(token_details, process.env.PRIVATEKEY)
                 res.cookie("token", token)
-                res.render('Dashboard', {emailaddress : result.email})
+                res.render('Dashboard', {emailaddress : result.email, id : result._id})
             }
         })
     }

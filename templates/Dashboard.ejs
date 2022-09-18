@@ -28,17 +28,24 @@
 }
 .meets-heading{
   
-  font-size: 25px;
+  font-size: 35px;
   font-family:'Times New Roman', Times, serif;
   padding: 20px;
 
 }
 .meet-types{
   display: flex;
+  justify-content: space-around;
 }
 .meet-type-sub{
   display: flex;
   flex-direction: column;
+}
+.meets-heading-inside{
+
+  background-color: antiquewhite;
+  border-radius: 10px;
+  
 }
 .maindev{
     /* display: flex;
@@ -131,7 +138,7 @@
       </nav>
     
     <!--main body-->
-    < class="maindev">
+    
         <a href="/detail">
 
             <button type="button" class="btn btn-outline-primary">Create MEET</button>
@@ -140,15 +147,10 @@
           <div class="meet-types">
               <div class="meet-type-sub">
                 <div class="meets-heading" >Scheduled Meets</div>
-                <div>
-                  <div>Date: </div>
-                  <div> Time :</div>
-                  <div>summary :</div>
-                  <div>link :</div>
-                  <div>location :</div>
-                  <div>descrition :</div>
-                  <div>Members :</div>
-        
+                <div class="meets-heading-inside">
+                  <div>Date/Time: 12/10/2022 , 01:00 AM </div>
+                  <div>Link: http://127.0.0.1:8000/meet/detail/63269f754a10a2b72484989f</div>
+                  <div>Attendi : "aringoyan402@gmail.com", "aarryyadav@gmail.com"</div>
                 </div>
               </div>
               
@@ -161,7 +163,16 @@
         
 
 
+<script>
+    fetch(`http://127.0.0.1:8000/meet/getmeets`).then((response) => {
+      return reponse.json()
+    })
+    .then((data) => {
+      console.log(data)
+      return data
+    })
 
+</script>
     </div>
 
 

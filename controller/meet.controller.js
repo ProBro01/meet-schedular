@@ -67,16 +67,17 @@ export async function createmeet(req, res, next) {
     }
 }
 
-export function showmeetbyid(req, res, next) {
-    meetmodel.findById(_id, (err, result) => {
-        if (err) {
-            res.json("error occured")
-        }
-        else {
-            res.json(result)
-        }
-    })
-}
+// export function showmeetbyid(req, res, next) {
+//     console.log(req.user._id)
+//     meetmodel.findById(mongoose.Types.ObjectId  (req.user._id), (err, result) => {
+//         if (err) {
+//             res.json("error occured")
+//         }
+//         else {
+//             res.json(result.past_meets)
+//         }
+//     })
+// }
 
 export function getmeetdetails(req, res, next) {
     try {
